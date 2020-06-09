@@ -10,7 +10,7 @@
     </parent>
     <groupId>com.salaboy.conferences</groupId>
     <artifactId>zeebe-k8s-tests</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>0.0.6</version>
     <name>Zeebe K8s :: Integration Tests</name>
     <description>Zeebe K8s :: Integration Tests For Helm Charts</description>
 
