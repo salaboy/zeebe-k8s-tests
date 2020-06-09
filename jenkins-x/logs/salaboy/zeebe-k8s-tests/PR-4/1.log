@@ -1,0 +1,189 @@
+
+Showing logs for build [32msalaboy-zeebe-k8s-tests-pr-4-pr-zlq9h-1[0m stage [32mfrom-build-pack[0m and container [32mstep-credential-initializer-7fgmh[0m
+{"level":"info","ts":1591709870.276971,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: open /var/run/ko/refs/heads/0.8.0-ns-support: no such file or directory"}
+{"level":"info","ts":1591709870.2774408,"logger":"fallback-logger","caller":"creds-init/main.go:40","msg":"Credentials initialized."}
+
+Showing logs for build [32msalaboy-zeebe-k8s-tests-pr-4-pr-zlq9h-1[0m stage [32mfrom-build-pack[0m and container [32mstep-working-dir-initializer-6ptnq[0m
+{"level":"info","ts":1591709871.5582957,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: open /var/run/ko/HEAD: no such file or directory"}
+{"level":"info","ts":1591709871.5606856,"logger":"fallback-logger","caller":"bash/main.go:64","msg":"Successfully executed command \"sh -c mkdir -p /workspace/source\"; output "}
+
+Showing logs for build [32msalaboy-zeebe-k8s-tests-pr-4-pr-zlq9h-1[0m stage [32mfrom-build-pack[0m and container [32mstep-place-tools[0m
+
+Showing logs for build [32msalaboy-zeebe-k8s-tests-pr-4-pr-zlq9h-1[0m stage [32mfrom-build-pack[0m and container [32mstep-git-source-salaboy-zeebe-k8s-tests-pr-4-pr-zlq9h-st6ht[0m
+{"level":"info","ts":1591709877.6694076,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: open /var/run/ko/refs/heads/0.8.0-ns-support: no such file or directory"}
+{"level":"info","ts":1591709878.7680893,"logger":"fallback-logger","caller":"git/git.go:103","msg":"Successfully cloned https://github.com/*******/zeebe-k8s-tests.git @ master in path /workspace/source"}
+
+Showing logs for build [32msalaboy-zeebe-k8s-tests-pr-4-pr-zlq9h-1[0m stage [32mfrom-build-pack[0m and container [32mstep-git-merge[0m
+Using SHAs from PULL_REFS=master:1718ed8543c34ba8b100e9736fbcf39c1d123cb1,4:a5005bcca3e423528969a147447a82bc06e4e065
+DEBUG: LC_ALL=C JX_LOG_LEVEL=error git fetch origin --unshallow a5005bcca3e423528969a147447a82bc06e4e065: 1718ed8543c34ba8b100e9736fbcf39c1d123cb1:
+DEBUG: ran git fetch --unshallow origin a5005bcca3e423528969a147447a82bc06e4e065: 1718ed8543c34ba8b100e9736fbcf39c1d123cb1: in 
+DEBUG: LC_ALL=C JX_LOG_LEVEL=error git branch
+DEBUG: LC_ALL=C JX_LOG_LEVEL=error git checkout master
+DEBUG: ran git checkout master in 
+DEBUG: JX_LOG_LEVEL=error LC_ALL=C git reset --hard 1718ed8543c34ba8b100e9736fbcf39c1d123cb1
+DEBUG: ran git reset --hard 1718ed8543c34ba8b100e9736fbcf39c1d123cb1 in 
+DEBUG: LC_ALL=C JX_LOG_LEVEL=error git clean -fd .
+DEBUG: ran clean --force -d . in 
+DEBUG: LC_ALL=C JX_LOG_LEVEL=error git merge a5005bcca3e423528969a147447a82bc06e4e065
+DEBUG: ran git merge a5005bcca3e423528969a147447a82bc06e4e065 in 
+DEBUG: LC_ALL=C JX_LOG_LEVEL=error git log --format=%H%x1f%an%x1f%ae%x1f%cn%x1f%ce%x1f%s%n%b%x1e 1718ed8543c34ba8b100e9736fbcf39c1d123cb1..HEAD
+Merged SHA a5005bcca3e423528969a147447a82bc06e4e065 with commit message 'pr' into base branch master
+
+Showing logs for build [32msalaboy-zeebe-k8s-tests-pr-4-pr-zlq9h-1[0m stage [32mfrom-build-pack[0m and container [32mstep-build-set-version[0m
+Picked up _JAVA_OPTIONS: -XX:+UnlockExperimentalVMOptions -Dsun.zip.disableMemoryMapping=true -XX:+UseParallelGC -XX:MinHeapFreeRatio=5 -XX:MaxHeapFreeRatio=10 -XX:GCTimeRatio=4 -XX:AdaptiveSizePolicyWeight=90 -Xms10m -Xmx192m
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] --------------< com.*******.conferences:zeebe-k8s-tests >---------------
+[INFO] Building Zeebe K8s :: Integration Tests 0.0.1-SNAPSHOT
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- versions-maven-plugin:2.7:set (default-cli) @ zeebe-k8s-tests ---
+[INFO] Searching for local aggregator root...
+[INFO] Local aggregation root: /workspace/source
+[INFO] Processing change of com.*******.conferences:zeebe-k8s-tests:0.0.1-SNAPSHOT -> 0.0.0-SNAPSHOT-PR-4-1
+[INFO] Processing com.*******.conferences:zeebe-k8s-tests
+[INFO]     Updating project com.*******.conferences:zeebe-k8s-tests
+[INFO]         from version 0.0.1-SNAPSHOT to 0.0.0-SNAPSHOT-PR-4-1
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  9.776 s
+[INFO] Finished at: 2020-06-09T13:38:13Z
+[INFO] ------------------------------------------------------------------------
+
+Showing logs for build [32msalaboy-zeebe-k8s-tests-pr-4-pr-zlq9h-1[0m stage [32mfrom-build-pack[0m and container [32mstep-build-mvn-install[0m
+Picked up _JAVA_OPTIONS: -XX:+UnlockExperimentalVMOptions -Dsun.zip.disableMemoryMapping=true -XX:+UseParallelGC -XX:MinHeapFreeRatio=5 -XX:MaxHeapFreeRatio=10 -XX:GCTimeRatio=4 -XX:AdaptiveSizePolicyWeight=90 -Xms10m -Xmx192m
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] --------------< com.*******.conferences:zeebe-k8s-tests >---------------
+[INFO] Building Zeebe K8s :: Integration Tests 0.0.0-SNAPSHOT-PR-4-1
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-resources-plugin:3.1.0:resources (default-resources) @ zeebe-k8s-tests ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 1 resource
+[INFO] Copying 1 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:compile (default-compile) @ zeebe-k8s-tests ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 2 source files to /workspace/source/target/classes
+[INFO] 
+[INFO] --- maven-resources-plugin:3.1.0:testResources (default-testResources) @ zeebe-k8s-tests ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /workspace/source/src/test/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:testCompile (default-testCompile) @ zeebe-k8s-tests ---
+[INFO] No sources to compile
+[INFO] 
+[INFO] --- maven-surefire-plugin:3.0.0-M1:test (default-test) @ zeebe-k8s-tests ---
+[INFO] No tests to run.
+[INFO] 
+[INFO] --- maven-jar-plugin:3.1.2:jar (default-jar) @ zeebe-k8s-tests ---
+[INFO] Building jar: /workspace/source/target/zeebe-k8s-tests-0.0.0-SNAPSHOT-PR-4-1.jar
+[INFO] 
+[INFO] --- spring-boot-maven-plugin:2.2.6.RELEASE:repackage (repackage) @ zeebe-k8s-tests ---
+[INFO] Replacing main artifact with repackaged archive
+[INFO] 
+[INFO] --- maven-install-plugin:2.5.2:install (default-install) @ zeebe-k8s-tests ---
+[INFO] Installing /workspace/source/target/app.jar to /home/jenkins/.mvnrepository/com/*******/conferences/zeebe-k8s-tests/0.0.0-SNAPSHOT-PR-4-1/zeebe-k8s-tests-0.0.0-SNAPSHOT-PR-4-1.jar
+[INFO] Installing /workspace/source/pom.xml to /home/jenkins/.mvnrepository/com/*******/conferences/zeebe-k8s-tests/0.0.0-SNAPSHOT-PR-4-1/zeebe-k8s-tests-0.0.0-SNAPSHOT-PR-4-1.pom
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  18.684 s
+[INFO] Finished at: 2020-06-09T13:38:35Z
+[INFO] ------------------------------------------------------------------------
+
+Showing logs for build [32msalaboy-zeebe-k8s-tests-pr-4-pr-zlq9h-1[0m stage [32mfrom-build-pack[0m and container [32mstep-build-skaffold-version[0m
+v1.0.1
+
+Showing logs for build [32msalaboy-zeebe-k8s-tests-pr-4-pr-zlq9h-1[0m stage [32mfrom-build-pack[0m and container [32mstep-build-container-build[0m
+E0609 13:38:39.159999       8 aws_credentials.go:77] while getting AWS credentials NoCredentialProviders: no valid providers in chain. Deprecated.
+	For verbose messaging see aws.Config.CredentialsChainVerboseErrors
+[36mINFO[0m[0001] Using dockerignore file: /workspace/source/.dockerignore 
+[36mINFO[0m[0001] Retrieving image manifest openjdk:11-jre-slim 
+E0609 13:38:39.563910       8 metadata.go:154] while reading 'google-dockercfg' metadata: http status code: 404 while fetching url http://metadata.google.internal./computeMetadata/v1/instance/attributes/google-dockercfg
+E0609 13:38:39.566426       8 metadata.go:166] while reading 'google-dockercfg-url' metadata: http status code: 404 while fetching url http://metadata.google.internal./computeMetadata/v1/instance/attributes/google-dockercfg-url
+[36mINFO[0m[0002] Retrieving image manifest openjdk:11-jre-slim 
+[36mINFO[0m[0004] Built cross stage deps: map[]                
+[36mINFO[0m[0004] Retrieving image manifest openjdk:11-jre-slim 
+[36mINFO[0m[0004] Retrieving image manifest openjdk:11-jre-slim 
+[36mINFO[0m[0005] Executing 0 build triggers                   
+[36mINFO[0m[0005] cmd: EXPOSE                                  
+[36mINFO[0m[0005] Adding exposed port: 8080/tcp                
+[36mINFO[0m[0005] Resolving srcs [pom.xml target/lib*]...      
+[36mINFO[0m[0005] Checking for cached layer gcr.io/camunda-researchanddevelopment/cache:49dd1c83d88b5f42db199623dc43c76efd9bc8019571527d403780e86d03fd3a... 
+[36mINFO[0m[0006] No cached layer found for cmd COPY pom.xml target/lib* /opt/lib/ 
+[36mINFO[0m[0006] Unpacking rootfs as cmd COPY pom.xml target/lib* /opt/lib/ requires it. 
+[36mINFO[0m[0011] ENV PORT 8080                                
+[36mINFO[0m[0011] No files changed in this command, skipping snapshotting. 
+[36mINFO[0m[0011] ENV CLASSPATH /opt/lib                       
+[36mINFO[0m[0011] No files changed in this command, skipping snapshotting. 
+[36mINFO[0m[0011] EXPOSE 8080                                  
+[36mINFO[0m[0011] cmd: EXPOSE                                  
+[36mINFO[0m[0011] Adding exposed port: 8080/tcp                
+[36mINFO[0m[0011] No files changed in this command, skipping snapshotting. 
+[36mINFO[0m[0011] Resolving srcs [pom.xml target/lib*]...      
+[36mINFO[0m[0011] COPY pom.xml target/lib* /opt/lib/           
+[36mINFO[0m[0011] Resolving srcs [pom.xml target/lib*]...      
+[36mINFO[0m[0011] Resolving 1 paths                            
+[36mINFO[0m[0011] Taking snapshot of files...                  
+[36mINFO[0m[0011] Pushing layer gcr.io/camunda-researchanddevelopment/cache:49dd1c83d88b5f42db199623dc43c76efd9bc8019571527d403780e86d03fd3a to cache now 
+[36mINFO[0m[0011] COPY target/app.jar /opt/app.jar             
+[36mINFO[0m[0011] Resolving 1 paths                            
+[36mINFO[0m[0011] Taking snapshot of files...                  
+[36mINFO[0m[0012] Pushing layer gcr.io/camunda-researchanddevelopment/cache:20e459474fd09782234ae6f314f0ee9d95740320602ec76eba9221e85895c411 to cache now 
+[36mINFO[0m[0012] WORKDIR /opt                                 
+[36mINFO[0m[0012] cmd: workdir                                 
+[36mINFO[0m[0012] Changed working directory to /opt            
+[36mINFO[0m[0012] No files changed in this command, skipping snapshotting. 
+[36mINFO[0m[0012] CMD ["java", "-jar", "app.jar"]              
+[36mINFO[0m[0012] No files changed in this command, skipping snapshotting. 
+
+Showing logs for build [32msalaboy-zeebe-k8s-tests-pr-4-pr-zlq9h-1[0m stage [32mfrom-build-pack[0m and container [32mstep-postbuild-post-build[0m
+no CVE provider running in the current ** namespace so skip adding image to be analysed
+
+Showing logs for build [32msalaboy-zeebe-k8s-tests-pr-4-pr-zlq9h-1[0m stage [32mfrom-build-pack[0m and container [32mstep-promote-make-preview[0m
+sed -i -e "s/version:.*/version: 0.0.0-SNAPSHOT-PR-4-1/" Chart.yaml
+sed -i -e "s/version:.*/version: 0.0.0-SNAPSHOT-PR-4-1/" ../*/Chart.yaml
+sed -i -e "s|repository:.*|repository: gcr.io\/camunda-researchanddevelopment\/zeebe-k8s-tests|" values.yaml
+sed -i -e "s/tag:.*/tag: 0.0.0-SNAPSHOT-PR-4-1/" values.yaml
+echo "  version: 0.0.0-SNAPSHOT-PR-4-1" >> requirements.yaml
+** step helm build
+WARNING: No $CHART_REPOSITORY defined so using the default value of: http://jenkins-x-chartmuseum:8080
+Adding missing Helm repo: storage.googleapis.com https://storage.googleapis.com/chartmuseum.jenkins-x.io
+Successfully added Helm repository storage.googleapis.com.
+Adding missing Helm repo: jenkins-x-chartmuseum http://jenkins-x-chartmuseum:8080
+Successfully added Helm repository jenkins-x-chartmuseum.
+WARNING: No $CHART_REPOSITORY defined so using the default value of: http://jenkins-x-chartmuseum:8080
+Adding missing Helm repo: chartmuseum.jenkins-x.io http://chartmuseum.jenkins-x.io
+Successfully added Helm repository chartmuseum.jenkins-x.io.
+
+Showing logs for build [32msalaboy-zeebe-k8s-tests-pr-4-pr-zlq9h-1[0m stage [32mfrom-build-pack[0m and container [32mstep-promote-jx-preview[0m
+Creating a preview
+Found commit author match for: ******* with email address: *******@gmail.com
+Created environment *******-zeebe-k8s-tests-pr-4
+Namespace **-*******-zeebe-k8s-tests-pr-4 created 
+expose:
+  Annotations:
+    helm.sh/hook: post-install,post-upgrade
+    helm.sh/hook-delete-policy: hook-succeeded
+  config:
+    domain: 35.230.155.173.nip.io
+    exposer: Ingress
+    http: "true"
+preview:
+  image:
+    repository: gcr.io/camunda-researchanddevelopment/zeebe-k8s-tests
+    tag: 0.0.0-SNAPSHOT-PR-4-1
+
+Updating PipelineActivities *******-zeebe-k8s-tests-pr-4-1 which has status Running
+WARNING: preview application http://zeebe-k8s-tests.**-*******-zeebe-k8s-tests-pr-4.35.230.155.173.nip.io not available, error was 503 503 Service Temporarily Unavailable, delaying for: 783.034151ms
+WARNING: preview application http://zeebe-k8s-tests.**-*******-zeebe-k8s-tests-pr-4.35.230.155.173.nip.io not available, error was 503 503 Service Temporarily Unavailable, delaying for: 1.077829579s
+WARNING: preview application http://zeebe-k8s-tests.**-*******-zeebe-k8s-tests-pr-4.35.230.155.173.nip.io not available, error was 503 503 Service Temporarily Unavailable, delaying for: 2.409014871s
+WARNING: preview application http://zeebe-k8s-tests.**-*******-zeebe-k8s-tests-pr-4.35.230.155.173.nip.io not available, error was 503 503 Service Temporarily Unavailable, delaying for: 2.690153652s
+WARNING: preview application http://zeebe-k8s-tests.**-*******-zeebe-k8s-tests-pr-4.35.230.155.173.nip.io not available, error was 503 503 Service Temporarily Unavailable, delaying for: 6.912008504s
+WARNING: preview application http://zeebe-k8s-tests.**-*******-zeebe-k8s-tests-pr-4.35.230.155.173.nip.io not available, error was 503 503 Service Temporarily Unavailable, delaying for: 4.011801539s
+WARNING: preview application http://zeebe-k8s-tests.**-*******-zeebe-k8s-tests-pr-4.35.230.155.173.nip.io not available, error was 503 503 Service Temporarily Unavailable, delaying for: 16.803924065s
+Preview application is now available at: http://zeebe-k8s-tests.**-*******-zeebe-k8s-tests-pr-4.35.230.155.173.nip.io
