@@ -34,7 +34,7 @@ public class TestController {
 
     @GetMapping("/")
     public String helloWorld() {
-        return "hello world!";
+        return "hello world! - from PR";
     }
 
     @GetMapping("/info")
