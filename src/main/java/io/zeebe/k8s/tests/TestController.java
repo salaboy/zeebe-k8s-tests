@@ -32,6 +32,11 @@ public class TestController {
     @Autowired
     private ZeebeClientLifecycle client;
 
+    @GetMapping("/")
+    public String helloWorld() {
+        return "hello world!";
+    }
+
     @GetMapping("/info")
     public String infoWithVersion() {
         return "{ \"name\" : \"Zeebe K8s Tests\", \"version\" : \"" + version + "\", \"source\": \"https://github.com/salaboy/zeebe-k8s-tests/releases/tag/v"+version+"\" }";
