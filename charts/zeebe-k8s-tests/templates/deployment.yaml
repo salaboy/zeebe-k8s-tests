@@ -30,6 +30,8 @@ spec:
         image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
         imagePullPolicy: {{ .Values.image.pullPolicy }}
         env:
+        - name: ZEEBE_CLIENT_BROKER_CONTACTPOINT
+          value: {{ .Values.zeebeGateway }}
 {{- range $pkey, $pval := .Values.env }}
         - name: {{ $pkey }}
           value: {{ quote $pval }}
