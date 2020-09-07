@@ -1,7 +1,6 @@
 package io.zeebe.k8s.tests;
 
 import io.zeebe.client.api.response.ActivatedJob;
-import io.zeebe.client.api.response.CompleteJobResponse;
 import io.zeebe.client.api.worker.JobClient;
 import io.zeebe.spring.client.annotation.ZeebeWorker;
 import lombok.extern.slf4j.Slf4j;
