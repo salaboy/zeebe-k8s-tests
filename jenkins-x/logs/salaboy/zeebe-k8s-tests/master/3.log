@@ -1,31 +1,31 @@
 
-Showing logs for build [32msalaboy-zeebe-k8s-tests-master-vzfgx-3[0m stage [32mfrom-build-pack[0m and container [32mstep-credential-initializer-z45wp[0m
-{"level":"info","ts":1591708172.968686,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: open /var/run/ko/refs/heads/0.8.0-ns-support: no such file or directory"}
-{"level":"info","ts":1591708172.9691463,"logger":"fallback-logger","caller":"creds-init/main.go:40","msg":"Credentials initialized."}
+Showing logs for build [32msalaboy-zeebe-k8s-tests-master-dw5lw-3[0m stage [32mfrom-build-pack[0m and container [32mcredential-initializer[0m
+{"level":"info","ts":1599636691.2341518,"caller":"creds-init/main.go:44","msg":"Credentials initialized."}
 
-Showing logs for build [32msalaboy-zeebe-k8s-tests-master-vzfgx-3[0m stage [32mfrom-build-pack[0m and container [32mstep-working-dir-initializer-gzfdq[0m
-{"level":"info","ts":1591708174.2005048,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: open /var/run/ko/HEAD: no such file or directory"}
-{"level":"info","ts":1591708174.2025762,"logger":"fallback-logger","caller":"bash/main.go:64","msg":"Successfully executed command \"sh -c mkdir -p /workspace/source\"; output "}
+Showing logs for build [32msalaboy-zeebe-k8s-tests-master-dw5lw-3[0m stage [32mfrom-build-pack[0m and container [32mworking-dir-initializer[0m
 
-Showing logs for build [32msalaboy-zeebe-k8s-tests-master-vzfgx-3[0m stage [32mfrom-build-pack[0m and container [32mstep-place-tools[0m
+Showing logs for build [32msalaboy-zeebe-k8s-tests-master-dw5lw-3[0m stage [32mfrom-build-pack[0m and container [32mplace-tools[0m
 
-Showing logs for build [32msalaboy-zeebe-k8s-tests-master-vzfgx-3[0m stage [32mfrom-build-pack[0m and container [32mstep-git-source-salaboy-zeebe-k8s-tests-master-vzfgx-gz6jf[0m
-{"level":"info","ts":1591708203.4103081,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: open /var/run/ko/refs/heads/0.8.0-ns-support: no such file or directory"}
-{"level":"info","ts":1591708204.8182192,"logger":"fallback-logger","caller":"git/git.go:103","msg":"Successfully cloned https://github.com/*******/zeebe-k8s-tests.git @ v0.0.5 in path /workspace/source"}
+Showing logs for build [32msalaboy-zeebe-k8s-tests-master-dw5lw-3[0m stage [32mfrom-build-pack[0m and container [32mstep-git-source-salaboy-zeebe-k8s-tests-master-dw5lw-bxzs2[0m
+{"level":"info","ts":1599636700.8540702,"caller":"git/git.go:105","msg":"Successfully cloned https://github.com/*******/zeebe-k8s-tests.git @ v0.0.10 in path /workspace/source"}
+{"level":"warn","ts":1599636700.8546038,"caller":"git/git.go:152","msg":"Unexpected error: creating symlink: symlink /tekton/home/.ssh /root/.ssh: file exists"}
+{"level":"info","ts":1599636701.0401068,"caller":"git/git.go:133","msg":"Successfully initialized and updated submodules in path /workspace/source"}
 
-Showing logs for build [32msalaboy-zeebe-k8s-tests-master-vzfgx-3[0m stage [32mfrom-build-pack[0m and container [32mstep-git-merge[0m
-Using SHAs from PULL_REFS=master:
+Showing logs for build [32msalaboy-zeebe-k8s-tests-master-dw5lw-3[0m stage [32mfrom-build-pack[0m and container [32mstep-setup-builder-home[0m
+
+Showing logs for build [32msalaboy-zeebe-k8s-tests-master-dw5lw-3[0m stage [32mfrom-build-pack[0m and container [32mstep-git-merge[0m
+Using SHAs from PULL_REFS=master:2ed6fc978462b4cfbcf7c0595f9197fbcb9339ff
 WARNING: no SHAs to merge, falling back to initial cloned commit
 
-Showing logs for build [32msalaboy-zeebe-k8s-tests-master-vzfgx-3[0m stage [32mfrom-build-pack[0m and container [32mstep-setup-jx-git-credentials[0m
+Showing logs for build [32msalaboy-zeebe-k8s-tests-master-dw5lw-3[0m stage [32mfrom-build-pack[0m and container [32mstep-setup-jx-git-credentials[0m
 Generated Git credentials file /workspace/xdg_config/git/credentials
 
-Showing logs for build [32msalaboy-zeebe-k8s-tests-master-vzfgx-3[0m stage [32mfrom-build-pack[0m and container [32mstep-build-mvn-deploy[0m
+Showing logs for build [32msalaboy-zeebe-k8s-tests-master-dw5lw-3[0m stage [32mfrom-build-pack[0m and container [32mstep-build-mvn-deploy[0m
 Picked up _JAVA_OPTIONS: -XX:+UnlockExperimentalVMOptions -Dsun.zip.disableMemoryMapping=true -XX:+UseParallelGC -XX:MinHeapFreeRatio=5 -XX:MaxHeapFreeRatio=10 -XX:GCTimeRatio=4 -XX:AdaptiveSizePolicyWeight=90 -Xms10m -Xmx192m
 [INFO] Scanning for projects...
 [INFO] 
 [INFO] --------------< com.*******.conferences:zeebe-k8s-tests >---------------
-[INFO] Building Zeebe K8s :: Integration Tests 0.0.5
+[INFO] Building Zeebe K8s :: Integration Tests 0.0.10
 [INFO] --------------------------------[ jar ]---------------------------------
 [INFO] 
 [INFO] --- maven-clean-plugin:3.1.0:clean (default-clean) @ zeebe-k8s-tests ---
@@ -37,7 +37,7 @@ Picked up _JAVA_OPTIONS: -XX:+UnlockExperimentalVMOptions -Dsun.zip.disableMemor
 [INFO] 
 [INFO] --- maven-compiler-plugin:3.8.1:compile (default-compile) @ zeebe-k8s-tests ---
 [INFO] Changes detected - recompiling the module!
-[INFO] Compiling 2 source files to /workspace/source/target/classes
+[INFO] Compiling 3 source files to /workspace/source/target/classes
 [INFO] 
 [INFO] --- maven-resources-plugin:3.1.0:testResources (default-testResources) @ zeebe-k8s-tests ---
 [INFO] Using 'UTF-8' encoding to copy filtered resources.
@@ -49,107 +49,106 @@ Picked up _JAVA_OPTIONS: -XX:+UnlockExperimentalVMOptions -Dsun.zip.disableMemor
 [INFO] --- maven-surefire-plugin:3.0.0-M1:test (default-test) @ zeebe-k8s-tests ---
 [INFO] No tests to run.
 [INFO] 
-[INFO] --- maven-jar-plugin:3.1.2:jar (default-jar) @ zeebe-k8s-tests ---
-[INFO] Building jar: /workspace/source/target/zeebe-k8s-tests-0.0.5.jar
+[INFO] --- maven-jar-plugin:3.2.0:jar (default-jar) @ zeebe-k8s-tests ---
+[INFO] Building jar: /workspace/source/target/zeebe-k8s-tests-0.0.10.jar
 [INFO] 
-[INFO] --- spring-boot-maven-plugin:2.2.6.RELEASE:repackage (repackage) @ zeebe-k8s-tests ---
+[INFO] --- spring-boot-maven-plugin:2.3.3.RELEASE:repackage (repackage) @ zeebe-k8s-tests ---
 [INFO] Replacing main artifact with repackaged archive
 [INFO] 
 [INFO] --- maven-install-plugin:2.5.2:install (default-install) @ zeebe-k8s-tests ---
-[INFO] Installing /workspace/source/target/app.jar to /home/jenkins/.mvnrepository/com/*******/conferences/zeebe-k8s-tests/0.0.5/zeebe-k8s-tests-0.0.5.jar
-[INFO] Installing /workspace/source/pom.xml to /home/jenkins/.mvnrepository/com/*******/conferences/zeebe-k8s-tests/0.0.5/zeebe-k8s-tests-0.0.5.pom
+[INFO] Installing /workspace/source/target/app.jar to /home/jenkins/.mvnrepository/com/*******/conferences/zeebe-k8s-tests/0.0.10/zeebe-k8s-tests-0.0.10.jar
+[INFO] Installing /workspace/source/pom.xml to /home/jenkins/.mvnrepository/com/*******/conferences/zeebe-k8s-tests/0.0.10/zeebe-k8s-tests-0.0.10.pom
 [INFO] 
 [INFO] --- maven-deploy-plugin:2.8.2:deploy (default-deploy) @ zeebe-k8s-tests ---
 [INFO] Using alternate deployment repository local-nexus::default::http://nexus/repository/maven-releases/
 [INFO] ------------------------------------------------------------------------
 [INFO] BUILD SUCCESS
 [INFO] ------------------------------------------------------------------------
-[INFO] Total time:  23.584 s
-[INFO] Finished at: 2020-06-09T13:10:33Z
+[INFO] Total time:  35.556 s
+[INFO] Finished at: 2020-09-09T07:32:22Z
 [INFO] ------------------------------------------------------------------------
 
-Showing logs for build [32msalaboy-zeebe-k8s-tests-master-vzfgx-3[0m stage [32mfrom-build-pack[0m and container [32mstep-build-skaffold-version[0m
+Showing logs for build [32msalaboy-zeebe-k8s-tests-master-dw5lw-3[0m stage [32mfrom-build-pack[0m and container [32mstep-build-skaffold-version[0m
 v1.0.1
 
-Showing logs for build [32msalaboy-zeebe-k8s-tests-master-vzfgx-3[0m stage [32mfrom-build-pack[0m and container [32mstep-build-container-build[0m
-E0609 13:10:36.235188       8 aws_credentials.go:77] while getting AWS credentials NoCredentialProviders: no valid providers in chain. Deprecated.
+Showing logs for build [32msalaboy-zeebe-k8s-tests-master-dw5lw-3[0m stage [32mfrom-build-pack[0m and container [32mstep-build-container-build[0m
+E0909 07:32:25.910379       8 aws_credentials.go:77] while getting AWS credentials NoCredentialProviders: no valid providers in chain. Deprecated.
 	For verbose messaging see aws.Config.CredentialsChainVerboseErrors
 [36mINFO[0m[0001] Using dockerignore file: /workspace/source/.dockerignore 
 [36mINFO[0m[0001] Retrieving image manifest openjdk:11-jre-slim 
-E0609 13:10:36.634059       8 metadata.go:154] while reading 'google-dockercfg' metadata: http status code: 404 while fetching url http://metadata.google.internal./computeMetadata/v1/instance/attributes/google-dockercfg
-E0609 13:10:36.637843       8 metadata.go:166] while reading 'google-dockercfg-url' metadata: http status code: 404 while fetching url http://metadata.google.internal./computeMetadata/v1/instance/attributes/google-dockercfg-url
-[36mINFO[0m[0002] Retrieving image manifest openjdk:11-jre-slim 
-[36mINFO[0m[0003] Built cross stage deps: map[]                
+E0909 07:32:26.563353       8 metadata.go:154] while reading 'google-dockercfg' metadata: http status code: 404 while fetching url http://metadata.google.internal./computeMetadata/v1/instance/attributes/google-dockercfg
+E0909 07:32:26.567089       8 metadata.go:166] while reading 'google-dockercfg-url' metadata: http status code: 404 while fetching url http://metadata.google.internal./computeMetadata/v1/instance/attributes/google-dockercfg-url
 [36mINFO[0m[0003] Retrieving image manifest openjdk:11-jre-slim 
+[36mINFO[0m[0004] Built cross stage deps: map[]                
 [36mINFO[0m[0004] Retrieving image manifest openjdk:11-jre-slim 
-[36mINFO[0m[0005] Executing 0 build triggers                   
-[36mINFO[0m[0005] cmd: EXPOSE                                  
-[36mINFO[0m[0005] Adding exposed port: 8080/tcp                
-[36mINFO[0m[0005] Resolving srcs [pom.xml target/lib*]...      
-[36mINFO[0m[0005] Checking for cached layer gcr.io/camunda-researchanddevelopment/cache:008e95e83203e16f691f772a5878c7abed1987ad900a4087f69f4f6b2552962c... 
-[36mINFO[0m[0005] No cached layer found for cmd COPY pom.xml target/lib* /opt/lib/ 
-[36mINFO[0m[0006] Unpacking rootfs as cmd COPY pom.xml target/lib* /opt/lib/ requires it. 
-[36mINFO[0m[0010] ENV PORT 8080                                
-[36mINFO[0m[0010] No files changed in this command, skipping snapshotting. 
-[36mINFO[0m[0010] ENV CLASSPATH /opt/lib                       
-[36mINFO[0m[0010] No files changed in this command, skipping snapshotting. 
-[36mINFO[0m[0010] EXPOSE 8080                                  
-[36mINFO[0m[0010] cmd: EXPOSE                                  
-[36mINFO[0m[0010] Adding exposed port: 8080/tcp                
-[36mINFO[0m[0010] No files changed in this command, skipping snapshotting. 
-[36mINFO[0m[0010] Resolving srcs [pom.xml target/lib*]...      
-[36mINFO[0m[0010] COPY pom.xml target/lib* /opt/lib/           
-[36mINFO[0m[0010] Resolving srcs [pom.xml target/lib*]...      
-[36mINFO[0m[0010] Resolving 1 paths                            
-[36mINFO[0m[0010] Taking snapshot of files...                  
-[36mINFO[0m[0010] Pushing layer gcr.io/camunda-researchanddevelopment/cache:008e95e83203e16f691f772a5878c7abed1987ad900a4087f69f4f6b2552962c to cache now 
-[36mINFO[0m[0010] COPY target/app.jar /opt/app.jar             
+[36mINFO[0m[0005] Retrieving image manifest openjdk:11-jre-slim 
+[36mINFO[0m[0006] Executing 0 build triggers                   
+[36mINFO[0m[0006] cmd: EXPOSE                                  
+[36mINFO[0m[0006] Adding exposed port: 8080/tcp                
+[36mINFO[0m[0006] Resolving srcs [pom.xml target/lib*]...      
+[36mINFO[0m[0006] Checking for cached layer gcr.io/camunda-researchanddevelopment/cache:3bf82116ce318124d0a4cc0f0611addf19ef002f3fae3a36c010e68276840ca0... 
+[36mINFO[0m[0007] No cached layer found for cmd COPY pom.xml target/lib* /opt/lib/ 
+[36mINFO[0m[0007] Unpacking rootfs as cmd COPY pom.xml target/lib* /opt/lib/ requires it. 
+[36mINFO[0m[0011] ENV PORT 8080                                
+[36mINFO[0m[0011] No files changed in this command, skipping snapshotting. 
+[36mINFO[0m[0011] ENV CLASSPATH /opt/lib                       
+[36mINFO[0m[0011] No files changed in this command, skipping snapshotting. 
+[36mINFO[0m[0011] EXPOSE 8080                                  
+[36mINFO[0m[0011] cmd: EXPOSE                                  
+[36mINFO[0m[0011] Adding exposed port: 8080/tcp                
+[36mINFO[0m[0011] No files changed in this command, skipping snapshotting. 
+[36mINFO[0m[0011] Resolving srcs [pom.xml target/lib*]...      
+[36mINFO[0m[0011] COPY pom.xml target/lib* /opt/lib/           
+[36mINFO[0m[0011] Resolving srcs [pom.xml target/lib*]...      
 [36mINFO[0m[0011] Resolving 1 paths                            
 [36mINFO[0m[0011] Taking snapshot of files...                  
-[36mINFO[0m[0012] Pushing layer gcr.io/camunda-researchanddevelopment/cache:dd44a43d2dd2a1d6e7f0b50779346652c0d47789a2548e228bf3ec4e55810b00 to cache now 
-[36mINFO[0m[0012] WORKDIR /opt                                 
-[36mINFO[0m[0012] cmd: workdir                                 
-[36mINFO[0m[0012] Changed working directory to /opt            
-[36mINFO[0m[0012] No files changed in this command, skipping snapshotting. 
-[36mINFO[0m[0012] CMD ["java", "-jar", "app.jar"]              
-[36mINFO[0m[0012] No files changed in this command, skipping snapshotting. 
+[36mINFO[0m[0011] Pushing layer gcr.io/camunda-researchanddevelopment/cache:3bf82116ce318124d0a4cc0f0611addf19ef002f3fae3a36c010e68276840ca0 to cache now 
+[36mINFO[0m[0012] COPY target/app.jar /opt/app.jar             
+[36mINFO[0m[0012] Resolving 1 paths                            
+[36mINFO[0m[0012] Taking snapshot of files...                  
+[36mINFO[0m[0013] WORKDIR /opt                                 
+[36mINFO[0m[0013] cmd: workdir                                 
+[36mINFO[0m[0013] Changed working directory to /opt            
+[36mINFO[0m[0013] No files changed in this command, skipping snapshotting. 
+[36mINFO[0m[0013] CMD ["java", "-jar", "app.jar"]              
+[36mINFO[0m[0013] No files changed in this command, skipping snapshotting. 
+[36mINFO[0m[0013] Pushing layer gcr.io/camunda-researchanddevelopment/cache:743358bddc1988185d458671e7cd213fcb4c9a60d46620ca4ea9c54330a472fc to cache now 
 
-Showing logs for build [32msalaboy-zeebe-k8s-tests-master-vzfgx-3[0m stage [32mfrom-build-pack[0m and container [32mstep-build-post-build[0m
+Showing logs for build [32msalaboy-zeebe-k8s-tests-master-dw5lw-3[0m stage [32mfrom-build-pack[0m and container [32mstep-build-post-build[0m
 no CVE provider running in the current ** namespace so skip adding image to be analysed
 
-Showing logs for build [32msalaboy-zeebe-k8s-tests-master-vzfgx-3[0m stage [32mfrom-build-pack[0m and container [32mstep-promote-changelog[0m
+Showing logs for build [32msalaboy-zeebe-k8s-tests-master-dw5lw-3[0m stage [32mfrom-build-pack[0m and container [32mstep-promote-changelog[0m
 Converted /workspace/source/charts/zeebe-k8s-tests to an unshallow repository
-Generating change log from git ref 7edaa53dbb3e4edc3faa2956f1ba5de54335cfa4 => ce7d0e6f6d681116a26f0167cdf36589228526f6
-WARNING: Failed to enrich commit 1e41431ad790331fed4aca61680dede8ef476956 with issues: selected more than one user from users.jenkins.io: [******* x-0]
-WARNING: Failed to enrich commit 1e41431ad790331fed4aca61680dede8ef476956 with issues: selected more than one user from users.jenkins.io: [******* x-0]
+Generating change log from git ref f2f19d8af8a014497d80812f9a6a3b50750f241a => 46fb08d854e2238c49b0d0b9c4ae4687191f32a1
+Associating user ******* in users.jenkins.io with email *******@gmail.com to git GitProvider user with login *******-2 as emails match
+Adding label jenkins.io/git-github-userid=*******-2 to user ******* in users.jenkins.io
+Associating user ******* in users.jenkins.io with email *******@gmail.com to git GitProvider user with login *******-2 as emails match
+Adding label jenkins.io/git-github-userid=*******-2 to user ******* in users.jenkins.io
 Finding issues in commit messages using git format
-WARNING: No release found for *******/zeebe-k8s-tests and tag v0.0.5 so creating a new release
-Updated the release information at https://github.com/*******/zeebe-k8s-tests/releases/tag/v0.0.5
+WARNING: No release found for *******/zeebe-k8s-tests and tag v0.0.10 so creating a new release
+Updated the release information at https://github.com/*******/zeebe-k8s-tests/releases/tag/v0.0.10
 generated: /workspace/source/charts/zeebe-k8s-tests/templates/release.yaml
-Created Release zeebe-k8s-tests-0-0-5 resource in namespace **
-Updating PipelineActivity *******-zeebe-k8s-tests-master-3 with version 0.0.5
-Updated PipelineActivities *******-zeebe-k8s-tests-master-3 with release notes URL: https://github.com/*******/zeebe-k8s-tests/releases/tag/v0.0.5
+Created Release zeebe-k8s-tests-0-0-10 resource in namespace **
+Updating PipelineActivity *******-zeebe-k8s-tests-master-3 with version 0.0.10
+Updated PipelineActivities *******-zeebe-k8s-tests-master-3 with release notes URL: https://github.com/*******/zeebe-k8s-tests/releases/tag/v0.0.10
 
-Showing logs for build [32msalaboy-zeebe-k8s-tests-master-vzfgx-3[0m stage [32mfrom-build-pack[0m and container [32mstep-promote-helm-release[0m
+Showing logs for build [32msalaboy-zeebe-k8s-tests-master-dw5lw-3[0m stage [32mfrom-build-pack[0m and container [32mstep-promote-helm-release[0m
 WARNING: No $CHART_REPOSITORY defined so using the default value of: http://jenkins-x-chartmuseum:8080
 Adding missing Helm repo: storage.googleapis.com https://storage.googleapis.com/chartmuseum.jenkins-x.io
 Successfully added Helm repository storage.googleapis.com.
 Adding missing Helm repo: jenkins-x-chartmuseum http://jenkins-x-chartmuseum:8080
 Successfully added Helm repository jenkins-x-chartmuseum.
 WARNING: No $CHART_REPOSITORY defined so using the default value of: http://jenkins-x-chartmuseum:8080
-Uploading chart file zeebe-k8s-tests-0.0.5.tgz to http://jenkins-x-chartmuseum:8080/api/charts
+Uploading chart file zeebe-k8s-tests-0.0.10.tgz to http://jenkins-x-chartmuseum:8080/api/charts
 Received 201 response: {"saved":true}
 
-Showing logs for build [32msalaboy-zeebe-k8s-tests-master-vzfgx-3[0m stage [32mfrom-build-pack[0m and container [32mstep-promote-jx-promote[0m
+Showing logs for build [32msalaboy-zeebe-k8s-tests-master-dw5lw-3[0m stage [32mfrom-build-pack[0m and container [32mstep-promote-jx-promote[0m
 WARNING: prow based install so skip waiting for the merge of Pull Requests to go green as currently there is an issue with gettingstatuses from the PR, see https://github.com/jenkins-x/**/issues/2410
 WARNING: No $CHART_REPOSITORY defined so using the default value of: http://jenkins-x-chartmuseum:8080
-Promoting app zeebe-k8s-tests version 0.0.5 to namespace **-staging
-Created Pull Request: https://github.com/*******/environment-zeebe-helm-new-staging/pull/13
-Added label updatebot to Pull Request https://github.com/*******/environment-zeebe-helm-new-staging/pull/13
-WARNING: Failed to query the Pull Request last commit status for https://github.com/*******/environment-zeebe-helm-new-staging/pull/13 ref 704f56e3c66517c91eefdee3a281461faafe9baf Could not find a status for repository *******/environment-zeebe-helm-new-staging with ref 704f56e3c66517c91eefdee3a281461faafe9baf
-got git provider status pending from PR https://github.com/*******/environment-zeebe-helm-new-staging/pull/13
-got git provider status pending from PR https://github.com/*******/environment-zeebe-helm-new-staging/pull/13
-got git provider status pending from PR https://github.com/*******/environment-zeebe-helm-new-staging/pull/13
-The connection to the server 10.52.0.1:443 was refused - did you specify the right host or port?
-[31m
-Pipeline failed on stage 'from-build-pack' : container 'step-promote-jx-promote'. The execution of the pipeline has stopped.[0m
+Promoting app zeebe-k8s-tests version 0.0.10 to namespace **-staging
+Created Pull Request: https://github.com/*******/environment-zeebe-helm-new-staging/pull/208
+Added label updatebot to Pull Request https://github.com/*******/environment-zeebe-helm-new-staging/pull/208
+got git provider status pending from PR https://github.com/*******/environment-zeebe-helm-new-staging/pull/208
+got git provider status pending from PR https://github.com/*******/environment-zeebe-helm-new-staging/pull/208
+Pull Request https://github.com/*******/environment-zeebe-helm-new-staging/pull/208 is merged at sha 56df3393911587f473de3709d638d0fe56ff2498
+Pull Request merged but we are not waiting for the update pipeline to complete!
