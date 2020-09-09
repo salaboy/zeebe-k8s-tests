@@ -9,21 +9,18 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.context.event.ApplicationReadyEvent;
 import org.springframework.context.event.EventListener;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.MediaType;
-import org.springframework.http.ResponseEntity;
+import org.springframework.http.*;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.client.RestTemplate;
 import reactor.core.publisher.Mono;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
 
-import static java.lang.Thread.*;
+import static java.lang.Thread.sleep;
 
 @RestController
 @Slf4j
@@ -33,11 +30,16 @@ public class TestController {
     @Value("${version:0.0.0}")
     private String version;
 
+    @Value("${ZEEQS_URL:http://zeeqs:9000}")
+    private String ZEEQS_URL;
+
     @Autowired
     private TestWorker testWorker;
 
     @Autowired
     private ZeebeClientLifecycle client;
+
+    private RestTemplate restTemplate = new RestTemplate();
 
     @GetMapping("/")
     public String helloWorld() {
@@ -84,7 +86,7 @@ public class TestController {
                     .body(Mono.just("ERROR Deploying: " + e.getMessage()));
 
         }
-
+        long startedKey = 0L;
         try {
             log.info("Starting Workflow Instance at: " + new Date());
             WorkflowInstanceEvent workflowInstanceEvent = client.newCreateInstanceCommand().bpmnProcessId(processIds.get(0)).latestVersion().send().join();
@@ -92,6 +94,7 @@ public class TestController {
             if (workflowInstanceEvent != null) {
                 log.info("New Instance Results: ");
                 log.info("\t Workflow Instance Key: " + workflowInstanceEvent.getWorkflowInstanceKey());
+                startedKey = workflowInstanceEvent.getWorkflowInstanceKey();
                 log.info("\t BPMN Process Id: " + workflowInstanceEvent.getBpmnProcessId());
                 log.info("\t Workflow Version: " + workflowInstanceEvent.getVersion());
             }else{
@@ -109,6 +112,32 @@ public class TestController {
             log.info("Waiting for Worker to complete the Job at: " + new Date());
             sleep(500);
         }
+
+        HttpHeaders headers = new HttpHeaders();
+        headers.add("content-type", "application/graphql");
+
+        // query is a grapql query wrapped into a String
+        String query1 = "{\n" +
+                "  workflowInstances(stateIn: [COMPLETED], limit: 100) {\n" +
+                "    nodes {\n" +
+                "      key\n" +
+                "    }\n" +
+                "  }\n" +
+                "}";
+
+
+
+        ResponseEntity<String> response = restTemplate.postForEntity(ZEEQS_URL, new HttpEntity<>(query1, headers), String.class);
+        log.info("GraphQL response: " + response.getBody());
+        boolean containsKey = response.getBody().contains(String.valueOf(startedKey));
+        while(!containsKey){
+            log.info("Waiting for Workflow Instance Key : " + startedKey + "appear in ZeeQS at: " +  new Date());
+            sleep(500);
+            response = restTemplate.postForEntity(ZEEQS_URL, new HttpEntity<>(query1, headers), String.class);
+            log.info("GraphQL response: " + response.getBody());
+            containsKey = response.getBody().contains(String.valueOf(startedKey));
+        }
+
 
         log.info("TEST with Simple Worker Finished at: " + new Date());
         log.info("+----------------------------------------------------------------------------------------------------+");
